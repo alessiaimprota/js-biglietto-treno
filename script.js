@@ -31,7 +31,7 @@ const userAge = parseInt(prompt("Inserisci la tua età per degli sconti!"));
 
 //Elaborazione
 
-const priceTicket = userKm * priceKm;
+const priceTicket = (userKm * priceKm).toFixed(2);
 
 //discount
 
