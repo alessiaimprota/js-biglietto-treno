@@ -13,52 +13,51 @@ ALTRIMENTI il prezzo resta invariato
 
 //Prezzo fisso per km
 const priceKm = 0.21;
+let result;
 //console.log(priceKm);
 
 //prezzo intero
-
-
 
 //iNPUT
 //chiedo all'utente i km da  percorrere e l'età
 
 const userKm = parseFloat(
-    prompt("Inserisci il numero di km da percorrere in treno!")
+  prompt("Inserisci il numero di km da percorrere in treno!")
 );
 //console.log(userKm, typeof userKm);
 
-
-const userAge = parseInt( 
-    prompt("Inserisci la tua età per degli sconti!")
-);
+const userAge = parseInt(prompt("Inserisci la tua età per degli sconti!"));
 //console.log(userAge, typeof userAge);
-
 
 //Elaborazione
 
 const priceTicket = userKm * priceKm;
 
 //discount
-const minorsDiscount = parseFloat(priceTicket - (priceTicket * 20 / 100)).toFixed(2);
-const seniorsDiscount = parseFloat(priceTicket - (priceTicket * 40 / 100)).toFixed(2);
+const minorsDiscount = parseFloat(
+  priceTicket - (priceTicket * 20) / 100
+).toFixed(2);
+const seniorsDiscount = parseFloat(
+  priceTicket - (priceTicket * 40) / 100
+).toFixed(2);
 
-
-if (userAge < 18){
-    console.log(`
+if (userAge < 18) {
+  result = `
     Hai il 20% di sconto! Il prezzo del biglietto intero è di ${priceTicket}\u20AC.
     Adesso puoi acquistare il biglietto al prezzo di: ${minorsDiscount}\u20AC!
-    `)
-} else if(userAge >= 65){
-    console.log(
-    `
+    `;
+  console.log(result);
+} else if (userAge >= 65) {
+  result = `
     Hai il 40% di sconto! Il prezzo del biglietto intero è di ${priceTicket}\u20AC.
     Adesso puoi acquistare il biglietto al prezzo di: ${seniorsDiscount}\u20AC!
-    `)
-} else{
-    console.log(`Nessuno sconto trovato. Acquista il tuo biglietto al prezzo di ${priceTicket}\u20AC`)
-};
+    `;
+  console.log(result);
+} else {
+  result = `Nessuno sconto trovato. Acquista il tuo biglietto al prezzo di ${priceTicket}\u20AC`;
+  console.log(result);
+}
 
+//Visualizzazione in pagina
 
-
- 
-
+document.getElementById("discount-result").innerHTML = result;
