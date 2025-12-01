@@ -32,9 +32,12 @@ p{
     padding-bottom: 50px;
 }
 
+a{
+    text-decoration: none;
+    color:  rgb(248, 236, 222);
+}
 .btn{
     background-color: rgb(172, 78, 78);
-    color:  rgb(248, 236, 222);
     border: 1px solid  rgb(248, 236, 222);
     border-radius: 15px;
     padding: 10px;
@@ -46,4 +49,5 @@ img{
     position: absolute;
     right: 50px;
     bottom: 50px;
+    filter: sepia(100%);
 }
