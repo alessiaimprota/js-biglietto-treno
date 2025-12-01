@@ -21,6 +21,7 @@ body{
     padding-top: 20px;
     border-radius: 20px;
     margin: 0 auto;
+    position: relative;
 }
 h1 , p , .btn{
     margin: 50px;
@@ -37,4 +38,12 @@ p{
     border: 1px solid  rgb(248, 236, 222);
     border-radius: 15px;
     padding: 10px;
+}
+
+
+img{
+    height: 50px;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
 }
