@@ -38,7 +38,7 @@ const priceTicket = (userKm * priceKm).toFixed(2);
 if (userAge < 18) {
 
     let discount = parseFloat(
-        priceTicket - (priceTicket * 20) / 100
+        priceTicket - ((priceTicket * 20) / 100)
     ).toFixed(2);
     
     result = `
@@ -49,7 +49,7 @@ if (userAge < 18) {
 } else if (userAge >= 65) {
 
     let discount = parseFloat(
-        priceTicket - (priceTicket * 40) / 100
+        priceTicket - ((priceTicket * 40) / 100)
     ).toFixed(2);
 
     result = `
