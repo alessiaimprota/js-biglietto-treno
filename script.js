@@ -34,21 +34,25 @@ const userAge = parseInt(prompt("Inserisci la tua età per degli sconti!"));
 const priceTicket = userKm * priceKm;
 
 //discount
-const minorsDiscount = parseFloat(
-  priceTicket - (priceTicket * 20) / 100
-).toFixed(2);
-const seniorsDiscount = parseFloat(
-  priceTicket - (priceTicket * 40) / 100
-).toFixed(2);
 
 if (userAge < 18) {
-  result = `
+
+    const minorsDiscount = parseFloat(
+        priceTicket - (priceTicket * 20) / 100
+    ).toFixed(2);
+    
+    result = `
     Hai il 20% di sconto! Il prezzo del biglietto intero è di ${priceTicket}\u20AC.
     Adesso puoi acquistare il biglietto al prezzo di: ${minorsDiscount}\u20AC!
     `;
-  console.log(result);
+    console.log(result);
 } else if (userAge >= 65) {
-  result = `
+
+    const seniorsDiscount = parseFloat(
+        priceTicket - (priceTicket * 40) / 100
+    ).toFixed(2);
+
+    result = `
     Hai il 40% di sconto! Il prezzo del biglietto intero è di ${priceTicket}\u20AC.
     Adesso puoi acquistare il biglietto al prezzo di: ${seniorsDiscount}\u20AC!
     `;
