@@ -31,37 +31,27 @@ const userAge = parseInt(prompt("Inserisci la tua età per degli sconti!"));
 
 //Elaborazione
 
-const priceTicket = (userKm * priceKm).toFixed(2);
-
+const priceTicket = userKm * priceKm;
+result=`Nessuno sconto trovato. Acquista il tuo biglietto al prezzo di ${priceTicket} \u20AC`
 //discount
 
 if (userAge < 18) {
-
-    let discount = parseFloat(
-        priceTicket - ((priceTicket * 20) / 100)
-    ).toFixed(2);
-    
+    let discount =
+        priceTicket - ((priceTicket * 20) / 100);
     result = `
     Hai il 20% di sconto! Il prezzo del biglietto intero è di ${priceTicket}\u20AC.
-    Adesso puoi acquistare il biglietto al prezzo di: ${discount}\u20AC!
+    Adesso puoi acquistare il biglietto al prezzo di: ${discount.toFixed(2)}\u20AC!
     `;
-    console.log(result);
-} else if (userAge >= 65) {
-
-    let discount = parseFloat(
-        priceTicket - ((priceTicket * 40) / 100)
-    ).toFixed(2);
-
+} else if(userAge >= 65) {
+    let discount =
+        priceTicket - ((priceTicket * 40) / 100);
     result = `
     Hai il 40% di sconto! Il prezzo del biglietto intero è di ${priceTicket}\u20AC.
-    Adesso puoi acquistare il biglietto al prezzo di: ${discount}\u20AC!
+    Adesso puoi acquistare il biglietto al prezzo di: ${discount.toFixed(2)}\u20AC!
     `;
-  console.log(result);
-} else {
-  result = `Nessuno sconto trovato. Acquista il tuo biglietto al prezzo di ${priceTicket}\u20AC`;
-  console.log(result);
 }
 
 //Visualizzazione in pagina
 
+console.log(result);
 document.getElementById("discount-result").innerHTML = result;
